@@ -40,7 +40,7 @@ export default class RequestConfig {
         const contentLength = (this.data).length;
 
         if (contentLength !== 2) this.headers["Content-Length"] = contentLength;
-        this.url = config?.url.includes(config?.baseURL) ? config?.url : config?.baseURL + config?.url;
+        this.url = config?.url?.includes(config?.baseURL) ? config?.url : config?.baseURL + config?.url;
 
         if (!isEmptyObj(this.params)) {
             this.url += "?";
